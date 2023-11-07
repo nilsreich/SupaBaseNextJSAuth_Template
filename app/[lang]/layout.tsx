@@ -3,6 +3,7 @@ import "./globals.css";
 import { Providers } from "@/components/Providers";
 import { Toaster } from "@/components/ui/toaster";
 import { i18n } from '@/lib/i18n-config'
+import { Navbar } from "@/components/Navbar";
 
 const defaultUrl = process.env.VERCEL_URL
   ? `https://${process.env.VERCEL_URL}`
@@ -28,14 +29,15 @@ export default function RootLayout({
   params: { lang: string }
 }) {
   return (
-    <html lang={params.lang} className={GeistSans.className}>
+    <html lang={params.lang} className={GeistSans.className} suppressHydrationWarning>
       <body>
         <Providers
           attribute="class"
           defaultTheme="system"
           enableSystem
           disableTransitionOnChange
-        >
+        >      <Navbar />
+
           {children}
           <Toaster />
         </Providers>

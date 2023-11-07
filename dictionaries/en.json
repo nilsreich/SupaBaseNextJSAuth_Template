@@ -1,6 +1,6 @@
 {
     "server-component": {
-      "welcome": "no"
+      "welcome": "Welcome"
     },
     "counter": {
       "increment": "Zuwachs",
